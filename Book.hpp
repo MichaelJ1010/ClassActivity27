@@ -2,14 +2,16 @@
 #define BOOK_H
 
 #include "./ReleaseDate.hpp"
+#include <string>
 
 namespace book {
 	struct Book {
-		string title;
-		string author;
+		std::string title;
+		std::string author;
 		int numberOfCopies;
 		release::ReleaseDate date;
 	};
+
 }
 
 #endif
