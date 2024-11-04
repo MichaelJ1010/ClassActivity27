@@ -7,6 +7,7 @@
 #include "./operator==.hpp"
 #include "./Choice.hpp"
 #include "addBook.hpp"
+#include "findBook.hpp"
 
 using namespace std;
 using namespace book;
@@ -14,6 +15,7 @@ using namespace out;
 using namespace equal;
 using namespace option;
 using namespace store;
+using namespace find;
 
 
 int main() {
@@ -25,24 +27,27 @@ int main() {
 		int choice;
 		bool end = false;
 		cin >> choice;
+
 		switch (choice) {
 		case static_cast<int>(Choice::add):
 			newBook = addBook();
 			collection.push_back(newBook);
-			cout << "Added : " << newBook << endl;
+			cout << "Added " << newBook << endl;
 			break;
+
 		case static_cast<int>(Choice::find):
-			cout << "choice 1" << endl;
+			findBook(collection);
 			break;
+
 		case static_cast<int>(Choice::quit):
 			cout << "closing system.";
 			end = true;
 			break;
+
 		default:
 			if (cin.fail()) {
 				cin.clear();
 				cin.ignore(numeric_limits<streamsize>::max(),'\n');
-				
 			}
 			cout << "Error: not a valid input." << endl;
 			break;
