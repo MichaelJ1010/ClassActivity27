@@ -1,6 +1,6 @@
 #include "./Book.hpp"
 #include "./ReleaseDate.hpp"
-#include "./Choice.hpp"
+#include "./operator.hpp"
 #include <iostream>
 #include <limits>
 
@@ -8,6 +8,7 @@
 using namespace book;
 using namespace std;
 using namespace release;
+using namespace out;
 
 namespace store {
 	Book addBook() {
@@ -33,7 +34,7 @@ namespace store {
 			cin >> day;
 			cout << "year (yyyy)" << endl;
 			cin >> year;
-
+			cout << "Successfully added " << Book{ title, author, copies, {month, day, year} } << endl;
 			return Book{ title, author, copies, {month, day, year} };
 	}
 }

@@ -24,7 +24,7 @@ namespace find {
 			if (title != collection[i]) {
 				continue;
 			}
-			cout << "Found book:\n" << collection[i] << "\nCopies left: " << collection[i].numberOfCopies << endl;
+			cout << "Found book: " << collection[i] << "\nCopies left: " << collection[i].numberOfCopies << endl;
 			found = true;
 		}
 		if (!found) {

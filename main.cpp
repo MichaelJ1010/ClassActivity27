@@ -2,17 +2,12 @@
 #include <vector>
 #include <limits>
 #include "./Book.hpp"
-#include "./ReleaseDate.hpp"
-#include "./operator.hpp"
-#include "./operator==.hpp"
 #include "./Choice.hpp"
 #include "addBook.hpp"
 #include "findBook.hpp"
 
 using namespace std;
 using namespace book;
-using namespace out;
-using namespace equal;
 using namespace option;
 using namespace store;
 using namespace find;
@@ -32,7 +27,6 @@ int main() {
 		case static_cast<int>(Choice::add):
 			newBook = addBook();
 			collection.push_back(newBook);
-			cout << "Added " << newBook << endl;
 			break;
 
 		case static_cast<int>(Choice::find):
