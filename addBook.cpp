@@ -2,6 +2,7 @@
 #include "./ReleaseDate.hpp"
 #include "./operator.hpp"
 #include <iostream>
+#include <vector>
 #include <limits>
 
 
@@ -11,10 +12,11 @@ using namespace release;
 using namespace out;
 
 namespace store {
-	Book addBook() {
+	Book addBook(const vector<book::Book>& collection) {
 		string title;
 		string author;
 		int copies;
+		int size = collection.size();
 		short month;
 		short day;
 		short year;
@@ -34,7 +36,10 @@ namespace store {
 			cin >> day;
 			cout << "year (yyyy)" << endl;
 			cin >> year;
-			cout << "Successfully added " << Book{ title, author, copies, {month, day, year} } << endl;
+			Book newBook{ title, author, copies, {month, day, year} };
+			
+
+			cout << "Adding " << Book{ title, author, copies, {month, day, year} } << endl;
 			return Book{ title, author, copies, {month, day, year} };
 	}
 }
